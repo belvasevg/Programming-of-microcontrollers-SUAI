@@ -10,4 +10,5 @@
 5 - статично горит жёлтый (3 секунды)
 6 - конец цикла.
 
-![Uploading image.png…]()
+![image](https://github.com/belvasevg/Programming-of-microcontrollers-SUAI-/assets/62217397/ac3313e1-0158-4020-988d-3210e2d440c5)
+

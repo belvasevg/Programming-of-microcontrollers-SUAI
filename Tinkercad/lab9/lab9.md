@@ -16,4 +16,4 @@
 ![image](https://github.com/belvasevg/Programming-of-microcontrollers-SUAI-/assets/62217397/0d05b033-59db-43bd-896a-46a9badd28c0)
 
 ### Пример выполнения лабораторной работы
-[Пример](https://www.tinkercad.com/things/dvzc06akJXQ-laboratornaya-6-lcd/editel?sharecode=68pPicWP1wC29E5rNco_N-tvxmuI2rRtPuvu-yP44Ks/ "ссылка на платформу Tinkercad")
+[Пример](https://www.tinkercad.com/things/1eNvhdBkfRg-laboratornaya-9-peregruzka-funkcij/editel?sharecode=Dg1GC8oYLQGYVg-Es9hGOsv9fpi0Fwlc1ueA5KxY-6E/ "ссылка на платформу Tinkercad")

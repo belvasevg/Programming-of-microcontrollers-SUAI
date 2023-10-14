@@ -11,7 +11,7 @@
    - параметры плавного включения в байт должны браться из индексов массива, отличных от 0.
 4. Вызвать разработанные функции в void loop.
 
-![image](https://github.com/belvasevg/Programming-of-microcontrollers-SUAI-/assets/62217397/2a1b2009-79d7-4303-9114-4de08e5b37b0)
+![image](https://github.com/belvasevg/Programming-of-microcontrollers-SUAI-/assets/62217397/fd830bf7-9bd7-4c95-8e8b-3cb9c9f4db70)
 
 ### Пример выполнения лабораторной работы
 [Пример](https://www.tinkercad.com/things/1WSYlp2k42C-laboratornaya-8-dvumernyj-massiv/editel?sharecode=Tez2qLyhyWZXFkvhuBVUfjLnfE9ksH-hFYVsuEA2CM4/ "ссылка на платформу Tinkercad")

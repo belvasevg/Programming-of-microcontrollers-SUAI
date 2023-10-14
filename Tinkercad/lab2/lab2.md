@@ -12,4 +12,5 @@
 
 ![image](https://github.com/belvasevg/Programming-of-microcontrollers-SUAI-/assets/62217397/ac3313e1-0158-4020-988d-3210e2d440c5)
 
+### Пример выполнения лабораторной работы
 [Пример](https://www.tinkercad.com/things/lQd3bnKVD9n-laboratornaya-2-rabota-neskolkih-svetodiodov-/editel?sharecode=f_f27c3_YpjsaYALpbPG6dvNoQzAjKULw3xGGLsSl2g/ "ссылка на платформу Tinkercad")

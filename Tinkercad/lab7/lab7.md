@@ -9,7 +9,7 @@
 4. Реализовать программу для плавного включения и выключения 5 различных цветов;
 5. Для работы отдельных цветов цветов необходимо использовать отдельные функции.
 
-![image](https://github.com/belvasevg/Programming-of-microcontrollers-SUAI-/assets/62217397/126b3d16-73d9-4f5b-8bcc-462535ac06c8)
+![image](https://github.com/belvasevg/Programming-of-microcontrollers-SUAI-/assets/62217397/da79ed89-0915-46bb-b743-00d7060f5427)
 
 ### Пример выполнения лабораторной работы
 [Пример](https://www.tinkercad.com/things/hkaDj6IKJTH-laboratornaya-7-odnomernyj-massiv/editel?sharecode=Ey4UJSFUkmmIt3O2e8T6BiQMVtGTPPWyHwegBO4XGpU/ "ссылка на платформу Tinkercad")

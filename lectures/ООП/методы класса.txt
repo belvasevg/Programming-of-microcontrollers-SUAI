@@ -1,0 +1,58 @@
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+class Point
+{
+public:
+
+	double x;
+	double y;
+	double z;
+};
+
+class Human
+{
+public:
+	int age = 18;
+	string name = "Adam";
+	double weight = 80;
+
+	void printName()
+	{
+		cout << "Имя: " << name << endl;
+	}
+	void printWeight()
+	{
+		cout << "Вес: " << weight << endl;
+	}
+	void printAge()
+	{
+		cout << "Возраст: " << age << endl;
+	}
+};
+
+
+int main()
+{
+	setlocale(LC_ALL, "ru");
+	Human human1;
+
+	human1.age = 28;
+	human1.name = "Vasiliy";
+	human1.weight = 103;
+	human1.printName();
+	human1.printAge();
+	human1.printWeight();
+	
+	cout << endl;
+
+	Human human2;
+
+	human2.printName();
+	human2.printAge();
+	human2.printWeight();
+
+	return 0;
+}

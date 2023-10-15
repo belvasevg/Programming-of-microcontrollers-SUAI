@@ -1,0 +1,75 @@
+#include "stdafx.h"
+
+using namespace std;
+
+//структуры, struct
+//короче, структуры это почти то же самое, что и классы, просто с небольшими отличиями
+//первый пример
+/*
+class MyClass //по умолчанию поля в классе private
+{
+	int a = 10;
+	void print()
+	{
+		cout << a << endl;
+	}
+};
+
+struct MyStruct //по умолчанию поля в структуре public
+{
+	int a = 1000;
+	void print()
+	{
+		cout << a << endl;
+	}
+};
+
+int main()
+{
+	setlocale(LC_ALL, "ru");
+
+	MyClass mc1;
+
+	MyStruct ms1;
+
+	ms1.a;//можно обратиться к структуре, но нельзя к классу
+	ms1.print();
+
+	return 0;
+}
+*/
+//второй пример с наследованием
+
+class ClassParent
+{
+public:
+	int a = 10;
+};
+
+class ClassChild: ClassParent //так наследуется как private
+{
+
+};
+
+struct StructParent
+{
+	int a = 1000;
+};
+
+struct StructChild : StructParent
+{
+
+};
+
+int main()
+{
+	setlocale(LC_ALL, "ru");
+
+	ClassChild cc;
+	//cc.a; //так не получится, потому что поле private
+
+	StructChild sc;
+	sc.a; //получится, потому что по умолчанию при наследовании поле public
+
+	return 0;
+}

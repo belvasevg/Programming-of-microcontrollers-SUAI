@@ -1,0 +1,18 @@
+#include <iostream> //директива препроцессора, которая подключает какой-то код (библиотеку), перед началом работы
+#define PI 3.1415 //define - определение чего либо
+#define TAB "\t"
+#define begin {
+#define end }
+
+
+using namespace std;
+
+void main()
+begin
+	cout << PI << endl;
+	cout << "text" << TAB << "text" << endl;
+	for (int i = 0; i < 5; i++)
+		begin
+		cout << i << endl;
+		end
+end

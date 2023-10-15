@@ -1,0 +1,48 @@
+#include <iostream>
+#include <ctime>
+#include <string>
+
+using namespace std;
+
+template <typename T>
+
+void Swap(T &pa, T &pb)
+{
+	
+	T swapping = pa;
+
+	pa = pb;
+	pb = swapping;
+}
+
+void main()
+{
+	setlocale(LC_ALL, "ru");
+	//srand(time(NULL));
+
+	//double a = rand() % 10;
+	//double b = rand() % 30;
+
+	string bulldog1 = "Лилу";
+	string bulldog2 = "Шанель";
+	/*
+	cout << "a = " << a << endl;
+	cout << "b = " << b << endl;
+
+	cout << "Замена значений у переменных" << endl;
+
+	Swap(a, b);
+
+	cout << "a = " << a << endl;
+	cout << "b = " << b << endl;
+	*/
+	cout << "Бульдог 1: " << bulldog1 << endl;
+	cout << "Бульдог 2: " << bulldog2 << endl;
+
+	cout << "Замена значений у бульдогов" << endl;
+
+	Swap(bulldog1, bulldog2);
+
+	cout << "Бульдог 1: " << bulldog1 << endl;
+	cout << "Бульдог 2: " << bulldog2 << endl;
+}

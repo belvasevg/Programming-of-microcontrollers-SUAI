@@ -1,0 +1,185 @@
+class Point
+{
+private:
+	double x;
+	double y;
+	double z;
+
+public:
+
+	Point ()
+	{
+		x = 0;
+		y = 0;
+		z = 0;
+	}
+	
+	Point(double valueX, double valueY, double valueZ) // конструктор класса
+	{
+		x = valueX;
+		y = valueY;
+		z = valueZ;
+	}
+	
+	double GetX()
+	{
+		return x;
+	}
+
+	void SetX(double valueX)
+	{
+		x = valueX;
+	}
+
+	double GetY()
+	{
+		return y;
+	}
+
+	void SetY(double valueY)
+	{
+		y = valueY;
+	}
+
+	double GetZ()
+	{
+		return z;
+	}
+
+	void SetZ(double valueZ)
+	{
+		z = valueZ;
+	}
+
+	void Print()
+	{
+		cout << "X = " << x << "\tY = " << y << "\tZ = " << z << endl;
+	}
+
+};
+
+______________________________________________
+
+class CoffeeGrinder
+{
+private:
+	bool CheckVoltage()
+	{
+		return true;
+	}
+
+public:
+	void Start()
+	{
+		//bool VoltageValue = CheckVoltage();
+		//if (VoltageValue)
+		if (CheckVoltage())
+		{
+			cout << "Ебашу зерно в кофейную пыль" << endl;
+		}
+		else
+		{
+			cout << "Меня ебашит током. Проверь, или я заебашу тебя" << endl;
+		}
+	}
+};
+
+__________________________________________________
+
+class Human
+{
+public:
+	int age = 18;
+	string name = "Adam";
+	double weight = 80;
+};
+
+class Point
+{
+public:
+
+	double x;
+	double y;
+	double z;
+};
+
+____________________________________________________
+
+class MyClass
+{
+private:
+	int* data;
+public:
+	MyClass(int size) //конструктор
+	{
+		srand(time(NULL));
+		data = new int[size];
+		for (int i = 0; i < size; i++)
+		{
+			data[i] = rand() % 10;
+		}
+		cout << "Объект " << data << "\t|\tВызвался конструктор" << endl;
+		for (int i = 0; i < size; i++)
+		{
+			cout << data[i] << '\t';
+		}
+		cout << endl;
+	}
+
+	~MyClass()		  // деструктор
+	{
+		delete[] data;
+		cout << "Объект " << *data << "\tВызвался ДЕструктор" << endl;
+	}
+};
+
+_______________________________________________________________
+
+class Image
+{
+public:
+	void getImageInfo()
+	{
+		for (int i = 0; i < LENGHT; i++)
+		{
+			//cout << "#" << i << ") " << Pixels[i].getInfo() << endl;
+		}
+	}
+
+
+private:
+
+
+	static const int LENGHT = 5;
+	/*Pixel pixels[5]
+	{
+		Pixel(0,144,53),
+		Pixel(255,213,95),
+		Pixel(200,144,113),
+		Pixel(160,85,187),
+		Pixel(77,58,165),
+	};*/
+};
+
+class Pixel  //inner - вложенный класс
+{
+public:
+	
+	Pixel()
+	{
+		r = g = b = 0;
+	}
+	Pixel(int r, int g, int b)
+	{
+		this->r = r;
+		this->g = g;
+		this->b = b;
+	}
+
+	string getInfo()
+	{
+		return "Pixel: r = " + to_string(r) + ",g = " + to_string(g) + ",b = " + to_string(b) + ".";
+	}
+private:
+	int r, g, b;
+};

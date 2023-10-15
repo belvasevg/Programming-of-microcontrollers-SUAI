@@ -1,0 +1,168 @@
+#include "stdafx.h"
+
+using namespace std;
+
+class MyString
+{
+public:
+	MyString(); //конструктор класса при пустом значении
+	MyString(const char *str); //конструктор класса при значении
+	MyString(const MyString& other); //конструктор копирования
+	~MyString(); //деструктор
+	void printString();
+	MyString& operator =(const MyString& other);
+	MyString operator +(const MyString& other);
+
+private:
+	char* str;
+};
+//КОНСТРУКТОРЫ
+//конструкторы класса
+MyString::MyString()
+{
+	str = nullptr;
+}
+
+MyString::MyString(const char* str)
+{
+	int lenght = strlen(str);
+	this->str = new char[lenght+1];
+
+	for (int i = 0; i < lenght; i++)
+	{
+		this->str[i] = str[i];
+	}
+
+	this->str[lenght] = '\0';
+}
+//конструктор копирования
+MyString::MyString(const MyString& other)
+{
+	if (this->str != nullptr)
+	{
+		delete[] str;
+	}
+	int lenght = strlen(other.str);
+	this->str = new char[lenght + 1];
+
+	for (int i = 0; i < lenght; i++)
+	{
+		this->str[i] = other.str[i];
+	}
+	this->str[lenght] = '\0';
+}
+//деструктор
+MyString::~MyString()
+{
+	delete[] this->str;
+}
+//МЕТОДЫ
+//метод вывода сообщений
+void MyString::printString()
+{
+	cout << this->str << endl;
+}
+//ПЕРЕГРУЗКИ
+//перегрузка оператора присваивания
+MyString& MyString::operator =(const MyString &other)
+{
+	if (this->str != nullptr)
+	{
+		delete[] str;
+	}
+	int lenght = strlen(other.str);
+	this->str = new char[lenght + 1];
+
+	for (int i = 0; i < lenght; i++)
+	{
+		this->str[i] = other.str[i];
+	}
+
+	this->str[lenght] = '\0';
+
+	return *this;
+}
+//перегрузка оператора сложения для конкатенации строк
+MyString MyString::operator +(const MyString& other)
+{
+	MyString newStr;
+	
+	int thisLenght = strlen(this->str);
+	int otherLenght = strlen(other.str);
+
+	newStr.str = new char[thisLenght + otherLenght + 1];
+
+	int i = 0;
+	for (; i < thisLenght; i++)
+	{
+		newStr.str[i] = this->str[i];
+	}
+
+	int j = 0;
+	for (; j < otherLenght; j++,i++)
+	{
+		newStr.str[i] = other.str[j];
+	}
+
+	newStr.str[thisLenght + otherLenght] = '\0';
+
+	return newStr;
+}
+
+//прототипы тестовых функций
+void test1();
+void test2();
+void test3();
+MyString concatenation_test(MyString& str1, MyString& str2);
+
+int main()
+{
+	/*test1();
+	test2();
+	test3();*/
+
+	MyString str1 = "Test ";
+	MyString str2 = "string";
+
+	MyString globalStr = str1 + str2;
+	globalStr.printString();
+	MyString globalStr1 = concatenation_test(str1, str2);
+	globalStr1.printString();
+
+	return 0;
+}
+//тестовые функции
+void test1()
+{
+	MyString str("Test");
+
+	str.printString();
+}
+
+void test2()
+{
+	MyString str1("Testing");
+
+	str1.printString();
+}
+
+void test3()
+{
+	MyString str("Test");
+
+	str.printString();
+
+	MyString str1("Testing");
+
+	str1.printString();
+
+	str = str1;
+
+	str.printString();
+}
+
+MyString concatenation_test(MyString &str1, MyString &str2)
+{
+	MyString result = str1 + str2;
+	return result;
+}

@@ -1,0 +1,44 @@
+#include <iostream>
+using namespace std;
+
+void main()
+{
+	const int SIZE = 5;
+	int arr[SIZE]{ 1,2,3,4,5};
+
+	for (int i = 0; i < SIZE; i++)
+		cout << arr[i] << endl;
+
+	cout << "___________________\n" << endl;
+
+	int *pArr = arr;
+
+	for (int i = 0; i < SIZE; i++)
+		cout << pArr[i] << endl;
+
+	cout << "___________________\n" << endl;
+
+	cout << "arr\t" << arr << endl;
+	cout << "pArr\t" << pArr << endl;
+
+	cout << "___________________\n" << endl;
+	//вывод значений с помощью указателя
+	for (int i = 0; i < SIZE; i++)
+		cout << *(pArr+i) << endl;
+
+	cout << "___________________\n" << endl;
+	//значения ячеек
+	cout << *arr << endl;
+	cout << *(arr+1) << endl;
+	cout << *(arr+2) << endl;
+	cout << *(arr+3) << endl;
+	cout << *(arr+4) << endl;
+
+	cout << "___________________\n" << endl;
+	//адреса ячеек
+	cout << arr << endl;
+	cout << (arr + 1) << endl;
+	cout << (arr + 2) << endl;
+	cout << (arr + 3) << endl;
+	cout << (arr + 4) << endl;
+}

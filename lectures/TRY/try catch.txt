@@ -1,0 +1,42 @@
+#include "stdafx.h"
+using namespace std;
+
+//обработка исключений try catch
+
+
+
+int main()
+{
+	setlocale(LC_ALL, "RU");
+
+	string path;
+	cout << "Введите путь к файлу: ";
+	cin >> path;
+
+	ifstream fin;
+	fin.exceptions(ifstream::badbit | ifstream::failbit);
+
+	try
+	{
+		cout << "Попытка открытия файла..." << endl;
+		fin.open(path);
+		cout << "Файл успешно открыт!" << endl;
+	}
+	////стандартный конструктор исключения с классом exception
+	//catch (const std::exception& ex)
+	//{
+	//	cout << ex.what() << endl;
+	//	cout << "Ошибка открытия файла" << endl;
+	//}
+	//исключение класса ifstream
+	catch (const ifstream::failure& ex)
+	{
+		cout << ex.what() << endl;
+		cout << ex.code() << endl;
+		cout << "Ошибка открытия файла" << endl;
+	}
+
+	fin.close();
+
+	return 0;
+}

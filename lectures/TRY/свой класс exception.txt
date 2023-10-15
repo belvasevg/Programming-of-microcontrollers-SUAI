@@ -1,0 +1,49 @@
+#include "stdafx.h"
+using namespace std;
+
+//обработка исключений try catch
+//throw
+//несколько блоков catch
+//создание собственного класса exception
+
+class MyException:public exception
+{
+public:
+	MyException(const char* msg, int dataState):exception(msg)
+	{
+		this->dataState = dataState;
+	}
+	int GetDataState()
+	{
+		return dataState;
+	}
+private:
+	int dataState;
+};
+
+void foo(int value)
+{
+	if (value < 0)
+	{
+		throw MyException("Число меньше нуля!", value);
+	}
+}
+
+int main()
+{
+	setlocale(LC_ALL, "RU");
+
+	try
+	{
+		foo(-11);
+	}
+	catch (MyException& ex)
+	{
+		cout << "Ошибка 1: " << ex.what() << endl;
+		cout << "Значение аргумента функции: " << ex.GetDataState() << endl;
+	}
+	//более узкоспециализированные catch нужно указывать выше по приоритету
+	
+	
+	return 0;
+}

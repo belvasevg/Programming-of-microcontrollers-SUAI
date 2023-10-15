@@ -1,0 +1,43 @@
+#include <iostream>
+#define DEBUG  //с комментарием закрывает блоки, раскомментированный включает блоки
+using namespace std;
+
+
+void main()
+{
+	setlocale(LC_ALL, "ru");
+
+#ifdef DEBUG //#ifndef - if NOT define, работает реверсивно от #ifdef
+	cout << "DEBUG is determined" << endl;
+#else
+	cout << "DEBUG is NOT determined" << endl;
+#endif
+
+#ifdef DEBUG
+	cout << "начало цикла" << endl;
+#endif
+
+	for (int i = 0; i < 10; i++)
+	{
+		cout << i << endl;
+	}
+#ifdef DEBUG
+	cout << "конец цикла" << endl;
+#endif
+}
+
+________________________________________________
+
+#include <iostream>
+#define DEBUG 2
+
+using namespace std;
+
+void main()
+{
+#ifdef DEBUG >4//#ifndef - if NOT define, работает реверсивно от #ifdef
+	cout << "DEBUG is determined" << endl;
+#elif DEBUG <4
+	cout << "DEBUG is NOT determined" << endl;
+#endif
+}

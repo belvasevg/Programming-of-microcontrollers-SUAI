@@ -1,0 +1,43 @@
+#include <iostream>
+#include <ctime>
+
+using namespace std;
+
+void main()
+{
+	setlocale(LC_ALL, "ru");
+
+	srand(time(NULL));
+
+	const int ROW = 4;
+	const int COL = 5;
+
+	int arr[ROW][COL];
+
+	cout << "Это мой первый двумерный массив на C++: \n\n" << endl;
+
+	for (int i = 0; i < ROW; i++)
+	{
+		for (int j = 0; j < COL; j++)
+		{
+			arr[i][j] = rand()%30;
+		}
+	}
+	
+	cout << "\t\t";
+
+	for (int i = 0; i < COL; i++)
+		cout << "Столбец № " << i << "\t";
+
+	cout << endl;
+
+	for (int i = 0; i < ROW; i++)
+	{
+		cout << "Ряд № " << i << "\t|\t";
+		for (int j = 0; j < COL; j++)
+		{
+			cout << arr[i][j] << "\t\t";
+		}
+		cout << endl;
+	}
+}

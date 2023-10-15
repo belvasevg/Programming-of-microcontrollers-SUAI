@@ -1,0 +1,37 @@
+#include <iostream>
+using namespace std;
+
+void main()
+{
+	setlocale(LC_ALL, "Rus");
+	int l = 30;
+	int i = 0;
+
+	for (; i < l; i += 3)
+	{ 
+		if (i%3 == 0 && i%2 == 0)
+			cout << "Итерация " << i << endl;
+	}
+	goto link;
+	for (; i < l*2; )
+	{
+		if (i % 3 == 0 && i % 2 == 0)
+		{
+			cout << "Итерация " << i << endl;
+		}
+		i += 3;
+	}
+	
+	link:
+
+	for (int j = 2; i < l * 3; j++)
+	{
+		if (i % 3 == 0 && i % 2 == 0)
+		{
+			cout << "Итерация " << i << endl;
+			cout << "Итерация умноженная на j " << i*j << endl;
+		}
+		i += 3;
+	}
+	system("pause");
+}

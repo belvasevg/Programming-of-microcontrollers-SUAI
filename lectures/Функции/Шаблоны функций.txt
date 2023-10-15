@@ -1,0 +1,103 @@
+#include <iostream>
+using namespace std;
+
+template <typename T >
+
+T Sum(T a, T b)
+{
+	return a + b;
+}
+
+ void main()
+ {
+	 cout << Sum(5, 6) << endl;
+
+	 cout << Sum(4.13, 5.56) << endl;
+
+	 cout << Sum(true,false) << endl;
+
+ }
+
+____________________________
+
+#include <iostream>
+using namespace std;
+
+template <typename T1,typename T2>
+
+T1 Sum(T1 a, T2 b)
+{
+	return a + b;
+}
+
+ void main()
+ {
+	 cout << Sum(5, 6) << endl;
+
+	 cout << Sum(4.13, 5) << endl;
+
+	 cout << Sum(5,true) << endl;
+
+ }
+
+____________________________________
+
+#include <iostream>
+using namespace std;
+
+template <typename T1,typename T2>
+
+void Sum(T1 a, T2 b)
+{
+	cout << a << endl;
+	cout << b << endl;
+}
+
+ void main()
+ {
+	 setlocale(LC_ALL, "ru");
+
+	 Sum(2, 4.212);
+ }
+
+_______________________________________
+
+#include <iostream>
+using namespace std;
+
+template <typename T1,typename T2>
+
+void Sum(T1 a, T2 b)
+{
+	cout << a << endl;
+	cout << b << endl;
+}
+
+ void main()
+ {
+	 setlocale(LC_ALL, "ru");
+
+	 Sum(2, "слово");
+ }
+
+______________________________________
+
+#include <iostream>
+using namespace std;
+
+template <class T1, class T2>
+
+void Sum(T1 a, T2 b)
+{
+	cout << a << endl;
+	cout << b << endl;
+}
+
+ void main()
+ {
+	 setlocale(LC_ALL, "ru");
+
+	 Sum(2, "слово");
+ }
+
+

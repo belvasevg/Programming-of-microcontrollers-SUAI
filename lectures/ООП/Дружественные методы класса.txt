@@ -1,0 +1,43 @@
+class Apple;
+
+class Human
+{
+public:
+	void takeApple(Apple& apple);	
+
+	void eatApple(Apple& apple)
+	{
+
+	}
+};
+
+class Apple
+{
+private:
+	double weight;
+	string color;
+public:
+	Apple(int weight, string color)
+	{
+		this->weight = weight;
+		this->color = color;
+	}
+	friend void Human::takeApple(Apple& apple);
+};
+
+int main()
+{
+	setlocale(LC_ALL, "ru");
+	
+	Apple apple(150, "red");
+	Human human;
+	human.takeApple(apple);
+	
+
+	return 0;
+}
+
+void Human::takeApple(Apple& apple)
+{
+	cout << "Take apple - " << "weight = " << apple.weight << " | color = " << apple.color << endl;
+}

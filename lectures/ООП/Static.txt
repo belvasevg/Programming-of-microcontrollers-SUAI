@@ -1,0 +1,58 @@
+#include "stdafx.h"
+
+using namespace std;
+
+class Apple
+{
+public:
+	
+	
+	Apple(int weight, string color)
+	{
+		this->weight = weight;
+		this->color = color;
+		count++;
+		id = count;
+	}
+	int getID();
+
+	static int getCount()
+	{
+		return count;
+	}
+
+	static void changeColor(Apple& apple, string color)
+	{
+		apple.color = color;
+	}
+private:
+	int weight;
+	string color;
+	int id;
+	static int count;
+};
+int Apple::count = 0;
+int Apple::getID()
+{
+	return id;
+}
+
+
+int main()
+{
+	Apple a1(100, "red");
+	/*Apple a2(100, "red");
+	Apple a3(150, "yellow");
+	Apple a4(200, "green");
+
+	cout << a1.getID() << endl;
+	cout << a2.getID() << endl;
+	cout << a3.getID() << endl;
+	cout << a4.getID() << endl;
+
+	Apple a5(200, "green");
+	cout << Apple::getCount() << endl;*/
+	a1.changeColor(a1, "green");
+	
+	return 0;
+}

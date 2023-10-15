@@ -1,0 +1,69 @@
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+void main()
+{
+	int* pa = new int;
+	*pa = 10;
+	cout << pa << endl;
+	cout << *pa << endl;
+	delete pa;
+
+	pa = NULL; // pa = 0;
+
+	if(pa!=NULL)
+		cout << pa << endl;
+	delete pa;
+}
+
+_________________________________________
+
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+// NULL или nullptr
+
+void main()
+{
+	int* pa = new int;
+	*pa = 10;
+	cout << pa << endl;
+	cout << *pa << endl;
+	
+	delete pa; 
+
+	pa = NULL; // pa = 0;
+
+	if(pa!=NULL)
+		cout << pa << endl;
+	delete pa;
+}
+
+__________________________________________
+
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+// NULL или nullptr
+
+void main()
+{
+	int* pa = new int;
+	*pa = 10;
+	cout << pa << endl;
+	cout << *pa << endl;
+	
+	delete pa; // сначала всегда delete
+
+	pa = nullptr; // pa = 0; || pa = NULL; - потом nullprt после delete
+
+	if(pa!=nullptr)
+		cout << pa << endl;
+	delete pa;
+}

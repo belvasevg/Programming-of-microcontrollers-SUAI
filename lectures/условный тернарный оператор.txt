@@ -1,0 +1,66 @@
+#include <iostream>
+
+using namespace std;
+
+void main()
+{
+	setlocale(LC_ALL, "ru");
+	/*
+	int a = 5;
+	int b = 10;
+	a++; //унарный оператор
+	a + b; //бинарный оператор
+	*/
+
+	int a = 5;
+	cout << "Enter value of a: ";
+	cin >> a;
+	/*
+	if (a < 10)
+	{
+		cout << "a < 10" << endl;
+	}
+	else
+	{
+		cout << "a > 10" << endl;
+	}
+	*/
+	(a<10) ? cout << "a < 10" << endl : cout << "a > 10" << endl;
+}
+
+__________________________________________________________________________
+
+#include <iostream>
+
+using namespace std;
+
+void main()
+{
+	setlocale(LC_ALL, "ru");
+	/*
+	int a = 5;
+	int b = 10;
+	a++; //унарный оператор
+	a + b; //бинарный оператор
+	*/
+
+	int a = 5;
+	cout << "Enter value of a: ";
+	cin >> a;
+	/*
+	if (a < 10)
+	{
+		cout << "a < 10" << endl;
+	}
+	else if (a == 10)
+	{
+		cout << "a == 10" << endl;
+	}
+	else
+	{
+		cout << "a > 10" << endl;
+	}
+	*/
+	//(a<10) ? (cout << "a < 10" << endl) : (cout << "a > 10" << endl);
+	a < 10 ? cout << "a < 10" << endl : a > 10 ? cout << "a > 10" << endl : cout << "a == 10" << endl;
+}

@@ -1,0 +1,138 @@
+#include <iostream>
+using namespace std;
+
+//Указатели на функции
+//тип функции (*имя указателя)(спецификация параметров);
+
+void foo1()
+{
+	cout << "void foo1()" << endl;
+}
+
+void foo2(int a)
+{
+	cout << "Переменная void foo2() = " << a << endl;
+}
+
+void main()
+{
+	setlocale(LC_ALL, "ru");
+	void (*fooPointer1)();
+
+	void (*fooPointer2)(int a);
+
+	fooPointer1 = foo1;
+
+	fooPointer1();
+
+	fooPointer2 = foo2;
+
+	fooPointer2(10);
+}
+
+______________________________________________________________
+
+#include <iostream>
+using namespace std;
+
+//Указатели на функции
+//тип функции (*имя указателя)(спецификация параметров);
+
+int foo1(int a)
+{
+	return a - 1;
+}
+
+int foo2(int a)
+{
+	return a * 2;
+}
+
+void main()
+{
+	setlocale(LC_ALL, "ru");
+
+	int (*fooPointer)(int a);
+
+	fooPointer = foo1;
+
+	cout << fooPointer(10) << endl;
+
+	fooPointer = foo2;
+
+	cout << fooPointer(10) << endl;
+}
+
+_________________________________________________________
+
+#include <iostream>
+#include <string>
+using namespace std;
+
+//Указатели на функции
+//тип функции (*имя указателя)(спецификация параметров);
+
+string DataFromBD()
+{
+	return "Data From BD";
+}
+
+string DataFromWebServer()
+{
+	return "Data from WebServer";
+}
+
+void ShowInfo(bool isFromBD)
+{
+	if (isFromBD)
+	{
+		cout << DataFromBD() << endl;
+	}
+	else
+	{
+		cout << DataFromWebServer() << endl;
+	}
+}
+
+void main()
+{
+	setlocale(LC_ALL, "ru");
+	ShowInfo(false);
+}
+
+________________________________________________________
+
+#include <iostream>
+#include <string>
+using namespace std;
+
+//Указатели на функции
+//тип функции (*имя указателя)(спецификация параметров);
+
+string GetDataFromBD()
+{
+	return "Data From BD";
+}
+
+string GetDataFromWebServer()
+{
+	return "Data from WebServer";
+}
+
+string GetDataFromAstral()
+{
+	return "Data From Astral";
+}
+
+void ShowInfo(string (*info)())
+{
+	cout << info() << endl;
+}
+
+void main()
+{
+	setlocale(LC_ALL, "ru");
+	ShowInfo(GetDataFromBD);
+	ShowInfo(GetDataFromWebServer);
+	ShowInfo(GetDataFromAstral);
+}

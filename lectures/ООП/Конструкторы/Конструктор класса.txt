@@ -1,0 +1,70 @@
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+class Point
+{
+private:
+	double x;
+	double y;
+	double z;
+
+public:
+
+	Point(double valueX, double valueY, double valueZ) // конструктор класса
+	{
+		x = valueX;
+		y = valueY;
+		z = valueZ;
+	}
+
+	double GetX()
+	{
+		return x;
+	}
+
+	void SetX(double valueX)
+	{
+		x = valueX;
+	}
+
+	double GetY()
+	{
+		return y;
+	}
+
+	void SetY(double valueY)
+	{
+		y = valueY;
+	}
+
+	double GetZ()
+	{
+		return z;
+	}
+
+	void SetZ(double valueZ)
+	{
+		z = valueZ;
+	}
+
+	void Print()
+	{
+		cout << "X = " << x << "\tY = " << y << "\tZ" << z << endl;
+	}
+
+};
+
+int main()
+{
+	Point p1(10,5,35);
+
+	p1.Print();
+
+	Point p2(-10, 30, 5);
+
+	p2.Print();
+
+	return 0;
+}

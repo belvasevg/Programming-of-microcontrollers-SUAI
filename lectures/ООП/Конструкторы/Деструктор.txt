@@ -1,0 +1,101 @@
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+
+class MyClass
+{
+private:
+	int data;
+public:
+	MyClass(int value) //конструктор
+	{
+		data = value;
+		cout << "Объект " << value << "\tВызвался конструктор" << endl;
+	}
+
+	~MyClass()		  // деструктор
+	{
+		cout << "Объект " << data << "\tВызвался ДЕструктор" << endl;
+	}
+};
+
+void foo()
+{
+	cout << "Foo starts" << endl;
+	MyClass a(100);
+	cout << "Foo ends" << endl;
+}
+
+int main()
+{
+	setlocale(LC_ALL, "ru");
+	MyClass a(1);
+
+	MyClass b(2);
+
+	MyClass c(3);
+
+	foo();
+
+	return 0;
+}
+
+______________________________________________
+
+#include <iostream>
+#include <string>
+#include <ctime>
+
+using namespace std;
+
+
+class MyClass
+{
+private:
+	int* data;
+public:
+	MyClass(int size) //конструктор
+	{
+		srand(time(NULL));
+		data = new int[size];
+		for (int i = 0; i < size; i++)
+		{
+			data[i] = rand() % 10;
+		}
+		cout << "Объект " << data << "\t|\tВызвался конструктор" << endl;
+		for (int i = 0; i < size; i++)
+		{
+			cout << data[i] << '\t';
+		}
+		cout << endl;
+	}
+
+	~MyClass()		  // деструктор
+	{
+		delete[] data;
+		cout << "Объект " << *data << "\tВызвался ДЕструктор" << endl;
+	}
+};
+
+void foo()
+{
+	cout << "Foo starts" << endl;
+	MyClass a(10);
+	cout << "Foo ends" << endl;
+}
+
+int main()
+{
+	setlocale(LC_ALL, "ru");
+	MyClass a(4);
+
+	MyClass b(5);
+
+	MyClass c(6);
+
+	foo();
+
+	return 0;
+}

@@ -1,0 +1,26 @@
+string path_to_file;
+//можно передать название с директорией d:\MyWork\MyWorks\IT_Projects\Pets_Cplus\work_with_files\myFile.txt
+//можно передать только название файла с указанием расширения MyFile.txt
+cout << "Введите название создаваемого файла: ";
+cin >> path_to_file;
+cout << endl;
+
+//ofstream myFile;
+////myFile.open(path_to_file);//такой файл появится в папке с проектом, при этом имеющиеся в нём значения будут стираться
+//myFile.open(path_to_file,ofstream::app);//такой файл появится в папке с проектом либо откроется то же файл, в который будут добавляться новые значения
+//if (!myFile.is_open())
+//{
+//	cout << "Error with openning file" << endl;
+//}
+//else
+//{
+//	myFile << "Это первый файл, созданный на языке C++" << endl << "Я буду крутым программистом!" << endl;
+//for (int i = 0; i < 2; i++)
+//	{
+//		cout << "Введите своё имя: ";
+//		string name;
+//		cin >> name;
+//		myFile << name << endl;
+//	}
+//}
+//myFile.close();

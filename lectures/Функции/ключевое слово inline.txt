@@ -1,0 +1,27 @@
+#include <iostream>
+using namespace std;
+
+inline int Sum(int a, int b)
+{
+	return a + b;
+}
+
+void main()
+{
+
+}
+
+__________________________
+
+#include <iostream>
+using namespace std;
+
+inline int Sum(int a, int b)
+{
+	return a + b;
+}
+
+void main()
+{
+	cout << Sum(3, 5);
+}

@@ -1,0 +1,70 @@
+#include "stdafx.h"
+using namespace std;
+
+//ofstream сохранение данных в файл
+//ifstream чтение данных из файла
+// чтение/сохрание объекта класса в файл
+//fstream чтение/сохранение данных
+//перегрузка операторов <</>>
+
+
+
+int main()
+{
+	setlocale(LC_ALL, "ru");
+	while (true)
+	{
+		string path_to_file;
+		//можно передать название с директорией d:\MyWork\MyWorks\IT_Projects\Pets_Cplus\work_with_files\myFile.txt
+		//можно передать только название файла с указанием расширения MyFile.txt
+		cout << "Введите название создаваемого файла: ";
+		cin >> path_to_file;
+		cout << endl;
+
+		
+
+		
+
+		fstream fs;
+		fs.open(path_to_file, fstream::in | fstream::out | fstream::app); // используется битовое или |
+		if (!fs.is_open())
+		{
+			cout << "Error reading file" << endl;
+		}
+		else
+		{
+			string msg;
+			int value;
+			cout << "File is open!" << endl;
+			cout << "Enter 1 for writing message into file." << endl;
+			cout << "Enter 2 for reading al messages from file." << endl;
+			cin >> value;
+
+			if (value == 1)
+			{
+				cout << "Enter your message: ";
+				SetConsoleCP(1251); // для передачи в консоль windows кириллицы
+				cin >> msg;
+				fs << msg << "\n";
+				SetConsoleCP(866); // возврат к первичной кодировке
+			}
+			else if (value == 2)
+			{
+				cout << "Reading..." << endl;
+				while (!fs.eof())
+				{
+					msg = "";
+					fs >> msg;
+					cout << msg << endl;
+				}
+			}
+			else
+			{
+				break;
+			}
+		}
+		fs.close();
+	}
+
+	return 0;
+}

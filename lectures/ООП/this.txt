@@ -1,0 +1,84 @@
+#include <iostream>
+#include <string>
+#include <ctime>
+
+using namespace std;
+
+
+class Point
+{
+private:
+	double x;
+	double y;
+	double z;
+
+public:
+
+	Point()
+	{
+		x = 0;
+		y = 0;
+		z = 0;
+		cout << this << " constructor" << endl;
+
+		//this. то же самое, что this -> , но для vs studio после 17 версии
+
+	}
+
+	Point(double valueX, double valueY, double valueZ) // конструктор класса
+	{
+		x = valueX;
+		y = valueY;
+		z = valueZ;
+		cout << this << " constructor" << endl;
+	}
+
+	double GetX()
+	{
+		return x;
+	}
+
+	void SetX(double x)
+	{
+		this -> x = x;
+	}
+
+	double GetY()
+	{
+		return y;
+	}
+
+	void SetY(double valueY)
+	{
+		y = valueY;
+	}
+
+	double GetZ()
+	{
+		return z;
+	}
+
+	void SetZ(double valueZ)
+	{
+		z = valueZ;
+	}
+
+	void Print()
+	{
+		cout << "X = " << x << "\tY = " << y << "\tZ = " << z << endl;
+	}
+};
+
+int main()
+{
+	Point a;
+	a.SetX(77);
+
+	a.Print();
+
+	/*Point b(5, 2, 10);
+
+	b.Print();
+	*/
+	return 0;
+}

@@ -1,0 +1,42 @@
+#include <iostream>
+#include <string>
+#include <ctime>
+
+using namespace std;
+
+void FillArray(int* const arr, int const size)
+{
+	srand(time(nullptr));
+
+	for (int i = 0; i < size; i++)
+	{
+		arr[i] = rand() % 10;
+	}
+}
+
+void ShowArray(int* const arr, int const size)
+{
+	for (int i = 0; i < size; i++)
+	{
+		cout << arr[i] << "\t";
+	}
+	cout << endl;
+}
+
+void DeleteArray(int* const arr)
+{
+	delete[] arr;
+	cout << "Memory is clear." << endl;
+}
+
+void main()
+{
+	int size;
+	cout << "Enter value of size: ";
+	cin >> size;
+	int *arr = new int [size];
+
+	FillArray(arr,size);
+	ShowArray(arr,size);
+	DeleteArray(arr);
+}

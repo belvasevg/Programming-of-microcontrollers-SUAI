@@ -1,0 +1,43 @@
+#include <iostream>
+using namespace std;
+
+int str_lenght_for(const char* str)
+{
+	int counter = 0;
+	for (int i = 0; i < strlen(str);i++)
+	{
+		if (str[counter] != '\0')
+		{
+			counter++;
+		}
+		else //if (str[counter] == '\0')
+		{
+			return counter;
+		}
+	}
+}
+
+int str_lenght_while(const char *str)
+{
+	int counter = 0;
+
+	while (str[counter] != '\0')
+	{
+		counter++;
+	}
+	return counter;
+}
+
+void main()
+{
+	const char* str = "Vasiliy";
+	
+	cout << str_lenght_while(str) << endl;
+
+	cout << str_lenght_for(str) << endl;
+
+	cout << str[1] << endl;
+}
+
+_________________________________________________
+

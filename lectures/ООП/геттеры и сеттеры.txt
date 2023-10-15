@@ -1,0 +1,57 @@
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+class Point 
+{
+private:
+	double x;
+	double y;
+	double z;
+
+public:
+
+	double GetX()
+	{
+		return x;
+	}
+
+	void SetX(double valueX)
+	{
+		x = valueX;
+	}
+	
+	double GetY()
+	{
+		return y;
+	}
+
+	void SetY(double valueY)
+	{
+		y = valueY;
+	}
+
+	double GetZ()
+	{
+		return z;
+	}
+
+	void SetZ(double valueZ)
+	{
+		z = valueZ;
+	}
+
+};
+
+int main()
+{
+	Point p1;
+	p1.SetX(5);
+	cout << p1.GetX() << endl;
+	p1.SetY(10);
+	cout << p1.GetY() << endl;
+	p1.SetZ(-100);
+	cout << p1.GetZ() << endl;
+	return 0;
+}

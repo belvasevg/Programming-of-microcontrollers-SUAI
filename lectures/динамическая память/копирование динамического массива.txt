@@ -1,0 +1,66 @@
+#include <iostream>
+#include <string>
+#include <ctime>
+
+using namespace std;
+
+void FillArray(int* const arr, int const size, int percent)
+{
+	srand(time(NULL));
+
+	for (int i = 0; i < size; i++)
+	{
+		arr[i] = rand() % percent;
+	}
+}
+
+void ShowArray(int* const arr, int const size)
+{
+	for (int i = 0; i < size; i++)
+	{
+		cout << arr[i] << "\t";
+	}
+	cout << endl;
+}
+
+void DeleteArray(int* const arr)
+{
+	delete[] arr;
+	cout << "Memory is clear." << endl;
+}
+
+void main()
+{
+	setlocale(LC_ALL, "ru");
+	int size;
+	string msg = string("Введите значение: ");
+	cout << msg;
+	cin >> size;
+
+	int* firstArray = new int[size];
+	int* secondArray = new int[size];
+
+	FillArray(firstArray, size, 10);
+	FillArray(secondArray, size, 30);
+
+	cout << "First Array: " << endl;
+	ShowArray(firstArray, size);
+	cout << "Second Array: " << endl;
+	ShowArray(secondArray, size);
+
+	DeleteArray(firstArray);
+	firstArray = new int[size];
+
+	for (int i = 0; i < size; i++)
+	{
+		firstArray[i] = secondArray[i];
+	}
+
+	cout << "First Array: " << endl;
+	ShowArray(firstArray, size);
+	cout << "Second Array: " << endl;
+	ShowArray(secondArray, size);
+
+	DeleteArray(firstArray);
+	DeleteArray(secondArray);
+}

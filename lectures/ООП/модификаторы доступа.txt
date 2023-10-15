@@ -1,0 +1,98 @@
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+class Point
+{
+public:
+	double x = 0;
+	
+	void Print()
+	{
+		cout << "x = " << x << "\ny = " << y << "\nz = " << z << endl;
+	}
+private:
+	double y = 0;
+	double z = 0;
+};
+
+int main()
+{
+	Point p1;
+	p1.Print();
+	
+
+	return 0;
+}
+
+_______________________________________________________
+
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+class Point
+{
+public:
+	double x = 0;
+	double y = 0;
+	double z = 0;
+	
+	void PrintCoord(string n)
+	{
+		if (n == "x" || n == "X")
+			PrintX();
+		else if (n == "y" || n == "Y")
+			PrintY();
+		else if (n == "z" || n == "Z")
+			PrintZ();
+		else if (n == "xyz" || n == "XYZ")
+		{
+			PrintX();
+			PrintY();
+			PrintZ();
+		}
+		else
+			cout << "такой координаты нет" << endl;
+	}
+private:
+	
+	void PrintX()
+	{
+		cout << "x = " << x << endl;
+	}
+	
+	void PrintY()
+	{
+		cout << "y = " << y << endl;
+	}
+
+	void PrintZ()
+	{
+		cout << "z = " << z << endl;
+	}
+};
+
+int main()
+{
+	setlocale(LC_ALL, "ru");
+	Point p1;
+	cout << "Enter x: ";
+	cin >> p1.x;
+	cout << "Enter y: ";
+	cin >> p1.y;
+	cout << "Enter z: ";
+	cin >> p1.z;
+
+	for (int i = 0; i < 5; i++)
+	{
+		cout << "Which coodrinate do you want to see?\nEnter: ";
+		string answer;
+		cin >> answer;
+		p1.PrintCoord(answer);
+	}
+
+	return 0;
+}

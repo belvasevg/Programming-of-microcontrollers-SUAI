@@ -1,0 +1,15 @@
+#include <iostream>
+using namespace std;
+
+void main()
+{
+	setlocale(LC_ALL, "Rus");
+	int count = 0;
+	while (true)
+	{
+		cout << "Вывод сообщения для " << count << " итерации" << endl;
+		count++;
+		if (count > 5000)
+			break;
+	}
+}

@@ -1,0 +1,95 @@
+#include <iostream>
+#include <string>
+#include <ctime>
+
+using namespace std;
+
+class MyClass
+{
+private:
+	int Size;
+public:
+	int* data;
+
+	MyClass(int size) // конструктор
+	{
+		this->Size = size;
+		this->data = new int[size];
+
+		srand(time(NULL));
+
+		for (int i = 0; i < size; i++)
+		{
+			data[i] = rand() % 20;
+		}
+
+		cout << "Вызвался конструтор " << this << endl;
+	}; 
+
+	MyClass(const MyClass& other) // конструктор копирования
+	{
+		//this->data = other.data; // так работает конструктор копирования номинально
+
+		this->Size = other.Size;
+
+		this->data = new int[other.Size];
+		
+		for (int i = 0; i < other.Size; i++)
+		{
+			this->data[i] = other.data[i];
+		}
+
+		cout << "Вызвался конструтор копирования " << this << endl;
+	}
+
+	MyClass & operator = (const MyClass& other)
+	{
+		cout << "вызвался оператор =" << endl;
+
+		this->Size = other.Size;
+
+		if (this->data != nullptr)
+		{
+			delete[] this->data;
+		}
+
+		this->data = new int[other.Size];
+
+		for (int i = 0; i < other.Size; i++)
+		{
+			this->data[i] = other.data[i];
+		}
+
+		return *this;
+	}
+
+	~MyClass() // деструктор
+	{
+		cout << "Вызвался деструктор " << this << endl;
+		delete[] data;
+	}
+};
+
+void foo(MyClass value)
+{
+	cout << "вызвалась функция foo" << endl;
+}
+
+MyClass foo2()
+{
+	cout << "Вызвалась функция foo" << endl;
+	MyClass temp(2);
+	return temp;
+}
+
+int main()
+{
+	setlocale(LC_ALL, "ru");
+	MyClass a(10);
+	MyClass b(2);
+	MyClass c(5);
+
+	c = a = b;
+
+	return 0;
+}

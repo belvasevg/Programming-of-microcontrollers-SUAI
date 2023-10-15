@@ -1,0 +1,48 @@
+#include "stdafx.h"
+using namespace std;
+
+//обработка исключений try catch
+//throw
+
+void foo(int value)
+{
+	//if (value<0)
+	//{
+	//	throw value; //тип данных, который бросается должен соответствовать типу данных в catch
+	//}
+	/*if (value < 0)
+	{
+		throw "Число меньше 0.";
+	}*/
+	//использование класса exception
+	if (value < 0)
+	{
+		throw exception("Число меньше нуля.");
+	}
+	cout << "Переменная = " << value << endl;
+}
+
+int main()
+{
+	setlocale(LC_ALL, "RU");
+
+	string path;
+	
+	try
+	{
+		foo(-10);
+	}
+	/*catch (const int ex)
+	{
+		cout << "Неверное значение параметра функции = " << ex << endl;
+	}*/
+	/*catch (const char *ex)
+	{
+		cout << "Ошибка: " << ex << endl;
+	}*/
+	catch (const exception& ex)
+	{
+		cout << "Ошибка: " << ex.what() << endl;
+	}
+	return 0;
+}

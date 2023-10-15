@@ -1,0 +1,74 @@
+#include "stdafx.h"
+
+using namespace std;
+
+//шаблоны классов
+
+class Point
+{
+private:
+	int x, y, z;
+public:
+	Point()
+	{
+		x = y = z = 0;
+	}
+	Point(int x, int y, int z)
+	{
+		this->x = x;
+		this->y = y;
+		this->z = z;
+	}
+	friend ostream& operator<<(ostream& os, const Point& p);
+};
+
+ostream& operator<<(ostream& os, const Point& p)
+{
+	os << "x = " << p.x << " | y = " << p.y << " | z = " << p.z;
+	return os;
+}
+
+template <typename T>
+
+class MyClass
+{
+public:
+	MyClass(T value)
+	{
+		this->value = value;
+	}
+	void DataTypeSize()
+	{
+		cout << sizeof(value) << endl;
+	}
+
+	T GetData()
+	{
+		return value;
+	}
+	
+private:
+	T value;
+};
+
+int main()
+{
+	MyClass<double> c1(3.1415);
+	c1.DataTypeSize();
+
+	MyClass<int> c2(43);
+	c2.DataTypeSize();
+
+	Point p1;
+	Point p2(-2, 2, 4);
+
+	MyClass<Point> c3(p1);
+	c3.DataTypeSize();
+
+	MyClass<Point> c4(p2);
+	c4.DataTypeSize();
+	Point data = c4.GetData();
+	cout << data << endl;
+
+	return 0;
+}

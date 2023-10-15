@@ -1,0 +1,16 @@
+#include <iostream>
+
+using namespace std;
+
+void foo(int a,int b); //прототип функции
+
+void main()
+{
+	setlocale(LC_ALL, "ru");
+	foo(5,2);
+}
+
+void foo(int a,int b)
+{
+	cout << "Вывожу значение a+b = " << a+b << endl;
+}

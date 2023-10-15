@@ -1,0 +1,26 @@
+#include <iostream>
+using namespace std;
+
+void Swap(int *pa, int *pb)
+{
+	int swapping = *pa;
+	
+	*pa = *pb;
+	*pb = swapping;
+}
+
+void main()
+{
+	setlocale(LC_ALL, "ru");
+	int a = 5, b = 6;
+
+	cout << "a = " << a << endl;
+	cout << "b = " << b << endl;
+
+	cout << "Замена значений у переменных" << endl;
+
+	Swap(&a, &b);
+
+	cout << "a = " << a << endl;
+	cout << "b = " << b << endl;
+}

@@ -1,0 +1,77 @@
+#include "stdafx.h"
+
+using namespace std;
+
+//шаблоны классов. Наследование
+
+class Point
+{
+private:
+	int x, y, z;
+public:
+	Point()
+	{
+		x = y = z = 0;
+	}
+	Point(int x, int y, int z)
+	{
+		this->x = x;
+		this->y = y;
+		this->z = z;
+	}
+	friend ostream& operator<<(ostream& os, const Point& p);
+};
+
+ostream& operator<<(ostream& os, const Point& p)
+{
+	os << "x = " << p.x << " | y = " << p.y << " | z = " << p.z;
+	return os;
+}
+
+template <typename T>
+class TypeSize
+{
+public:
+	TypeSize(T value)
+	{
+		this->value = value;
+	}
+
+	void DataTypeSize()
+	{
+		cout << "value " << sizeof(value) << endl;
+	}
+protected:
+	T value;
+};
+
+template <typename T>
+class TypeInfo : public TypeSize<T>
+{
+public:
+	TypeInfo(T value):TypeSize<T>(value)
+	{
+
+	}
+	void ShowTypeName()
+	{
+		cout << "Тип данных: " << typeid(this->value).name() << endl;
+	}
+};
+
+int main()
+{
+	setlocale(LC_ALL, "ru");
+
+	double a = 2;
+
+	TypeInfo<double> c(a);
+	c.DataTypeSize();
+	c.ShowTypeName();
+
+	Point p;
+
+	TypeInfo<Point> p1(p);
+	p1.DataTypeSize();
+	p1.ShowTypeName();
+}

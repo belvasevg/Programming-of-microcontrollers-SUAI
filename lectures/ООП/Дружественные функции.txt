@@ -1,0 +1,158 @@
+#include <iostream>
+#include <string>
+#include <ctime>
+
+using namespace std;
+
+class Test;
+class Point
+{
+private:
+	double x;
+	double y;
+	double z;
+
+public:
+
+	Point()
+	{
+		x = 0;
+		y = 0;
+		z = 0;
+	}
+
+	Point(double valueX, double valueY, double valueZ) // конструктор класса
+	{
+		x = valueX;
+		y = valueY;
+		z = valueZ;
+	}
+
+	bool operator == (const Point &other)
+	{
+		return this->x == other.x && this->y == other.y && this->z == other.z;
+	}
+
+	bool operator != (const Point& other)
+	{
+		return !(this->x == other.x && this->y == other.y && this->z == other.z);
+	}
+
+	Point operator +(const Point &other)
+	{
+		Point temp;
+		temp.x = this->x + other.x;
+		temp.y = this->y + other.y;
+		temp.z = this->z + other.z;
+		return temp;
+	}
+
+	double GetX()
+	{
+		return x;
+	}
+
+	void SetX(double valueX)
+	{
+		x = valueX;
+	}
+
+	double GetY()
+	{
+		return y;
+	}
+
+	void SetY(double valueY)
+	{
+		y = valueY;
+	}
+
+	double GetZ()
+	{
+		return z;
+	}
+
+	void SetZ(double valueZ)
+	{
+		z = valueZ;
+	}
+
+	void Print()
+	{
+		cout << "X = " << x << "\tY = " << y << "\tZ = " << z << endl;
+	}
+
+	~Point() 
+	{
+		cout << "Вызвался деструктор " << this << endl;
+	}
+
+	Point& operator ++() //перегрузка префиксного инкремента
+	{
+		this->x += 1;
+		this->y = this->y + 1;
+		this->z++;
+
+		return *this;
+	}
+
+	Point& operator ++(int value) //перегрузка постфиксного инкремента
+	{
+		Point temp(*this);
+
+		this->x += 1;
+		this->y = this->y + 1;
+		this->z++;
+
+		return temp;
+	}
+
+	Point& operator --() //перегрузка префиксного декремента
+	{
+		this->x -= 1;
+		this->y = this->y - 1;
+		this->z--;
+
+		return *this;
+	}
+
+	Point& operator --(int value) //перегрузка постфиксного декремента
+	{
+		Point temp(*this);
+
+		this->x -= 1;
+		this->y = this->y - 1;
+		this->z--;
+
+		return temp;
+	}
+
+	friend void changeX(Point& value, Test &testValue);
+};
+
+class Test
+{
+private:
+	int Data = 0;
+	friend void changeX(Point& value, Test& testValue);
+};
+
+void changeX(Point& value, Test &testValue)
+{
+	value.x--;
+	testValue.Data++;
+}
+
+int main()
+{
+	setlocale(LC_ALL, "ru");
+	
+	Test test;
+
+	Point a(5, 12, 34);
+	a.Print();
+	changeX(a, test);
+	a.Print();
+
+	return 0;
+}

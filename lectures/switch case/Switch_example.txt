@@ -1,0 +1,23 @@
+#include <iostream>
+using namespace std;
+
+void main()
+{
+	setlocale(LC_ALL, "Rus");
+	int a;
+	cout << "Number a: ";
+	cin >> a;
+	switch (a) // объявление свича
+	{
+	case 0:
+	{
+		cout << "Число равно нулю" << endl;
+	}
+		break; // без break выведет ещё одно сообщение
+	case 1:
+		cout << "Число не равно одному" << endl;
+		break;
+	default: // блок не обязателен
+		cout << "Число не подходит под условия" << endl;
+		break;
+	}

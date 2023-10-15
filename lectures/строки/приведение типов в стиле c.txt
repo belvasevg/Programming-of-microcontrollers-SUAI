@@ -1,0 +1,23 @@
+#include <iostream>
+using namespace std;
+
+void main()
+{
+	//явное приведение к типу
+	double a = 33.3;
+	cout << "double a -> int a: " << (int)a << endl;
+	cout << "double a -> bool a: " << (bool)a << endl;
+	cout << "double a -> char a: " << (char)a << endl;
+
+	// неявное приведение к типу
+	int b = 100.6565;
+	cout << "double value -> int b: " << b << endl;
+
+	int c = a;
+	cout << "double a -> int c" << endl;
+
+	//компилятор работает над минимализацие потери данных
+	//компилятор приводит к наибольшему типу данных
+
+	cout << b / a << endl;
+}

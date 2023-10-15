@@ -1,0 +1,54 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+void main()
+{
+	string str1 = "Vasiliy";
+	string str2 = "Belay";
+	string result;
+
+	result = str1 + " " + str2;
+	cout << result << endl;
+}
+
+____________________________________
+
+//не работает в VS 2022
+
+//2023 год, VS 2022
+//strcat и strcat_s не работают
+#include <iostream>
+#include <string>
+using namespace std;
+
+void main()
+{
+	char result[255]{};
+	char str1[255] = "Vasiliy";
+	char str2[255] = "Belay";
+
+	cout << str1 << endl;
+
+	strcat_s(result, str2);
+
+	cout << result << endl;
+}
+
+__________________________________
+
+#include <iostream>
+#include <string>
+using namespace std;
+
+void main()
+{
+	setlocale(LC_ALL, "ru");
+	string name = "Vasiliy";
+	string surname = "Belay";
+	string secondName = "Evgenievich";
+	string result;
+
+	result = "Фамилия: " + surname + "\n" + "Имя: " + name + "\n" + "Отчество: " + secondName;
+	cout << result << endl;
+}

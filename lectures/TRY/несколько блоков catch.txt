@@ -1,0 +1,48 @@
+#include "stdafx.h"
+using namespace std;
+
+//обработка исключений try catch
+//throw
+//несколько блоков catch
+
+void foo(int value)
+{
+	if (value == 0)
+	{
+		throw exception("Число не должно быть нулём");
+	}
+	if (value < 0)
+	{
+		throw "Число меньше нуля.";
+	}
+	if (value == 1)
+	{
+		throw 1;
+	}
+	cout << "Переменная = " << value << endl;
+}
+
+int main()
+{
+	setlocale(LC_ALL, "RU");
+
+	string path;
+	
+	try
+	{
+		foo(1);
+	}
+	catch (exception& ex)
+	{
+		cout << "Ошибка 1: " << ex.what() << endl;
+	}
+	catch (const char* ex)
+	{
+		cout << "Ошибка 2: " << ex << endl;
+	}
+	catch (...) //такой catch только в конце
+	{
+		cout << "Ошибка 3: Что-то пошло не так" << endl;
+	}
+	return 0;
+}

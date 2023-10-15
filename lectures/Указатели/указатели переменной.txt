@@ -1,0 +1,35 @@
+#include <iostream>
+using namespace std;
+
+void main()
+{
+	int a = 5;
+	
+	int *px = &a;
+
+	int* px2 = &a;
+
+	cout << "value a: " <<  a << endl;
+	
+	cout << "px: " << px << endl; //адрес
+
+	cout << "value px: " << *px << endl; // разноименование
+
+	cout << "px2: " << px2 << endl;
+
+	cout << "value px2: " << *px2 << endl;
+
+	//изменение переменной по указателю
+
+	*px2 = 2;
+
+	cout << "value a: " << a << endl;
+
+	cout << "px: " << px << endl; //адрес
+
+	cout << "value px: " << *px << endl; // разноименование
+
+	cout << "px2: " << px2 << endl;
+
+	cout << "value px2: " << *px2 << endl;
+}

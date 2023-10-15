@@ -1,0 +1,26 @@
+#include <iostream>
+using namespace std;
+
+void foo(int *pa, int *pb, int *pc)
+{
+	(*pa) = 5;
+	(*pb) = 2;
+	(*pc) = (*pa) * (*pb);
+}
+
+void main()
+{
+	int a = 0, b = 0, c = 0;
+
+	cout << "a = " << a << endl;
+	cout << "b = " << b << endl;
+	cout << "c = " << c << endl;
+
+	cout << "foo" << endl;
+
+	foo(&a, &b, & c);
+
+	cout << "a = " << a << endl;
+	cout << "b = " << b << endl;
+	cout << "c = " << c << endl;
+}

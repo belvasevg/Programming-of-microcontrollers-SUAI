@@ -1,0 +1,31 @@
+#include "stdafx.h"
+//пространства имён
+using namespace std;
+
+
+namespace firstNS
+{
+	void foo()
+	{
+		cout << "Функция foo первого пространства имён" << endl;
+	}
+}
+
+namespace secondNS
+{
+	void foo()
+	{
+		cout << "Функция foo второго пространства имён" << endl;
+	}
+}
+
+
+int main()
+{
+	setlocale(LC_ALL, "ru");
+
+	firstNS::foo();
+	secondNS::foo();
+	
+	return 0;
+}

@@ -1,0 +1,54 @@
+#include "stdafx.h"
+
+using namespace std;
+
+class Image
+{
+public:
+	void getImageInfo()
+	{
+		for (int i = 0; i < LENGHT; i++)
+		{
+			cout << "#" << i << ") " << pixels[i].getInfo() << endl;
+		}
+	}
+
+
+private:
+	class Pixel  //inner - вложенный класс
+	{
+	public:
+		Pixel(int r, int g, int b)
+		{
+			this->r = r;
+			this->g = g;
+			this->b = b;
+		}
+
+		string getInfo()
+		{
+			return "Pixel: r - " + to_string(r) + ",g - " + to_string(g) + ",b - " + to_string(b) + ".";
+		}
+	private:
+		int r, g, b;
+	};
+
+	static const int LENGHT = 5;
+	Pixel pixels[5]
+	{
+		Pixel(0,144,53),
+		Pixel(255,213,95),
+		Pixel(200,144,113),
+		Pixel(160,85,187),
+		Pixel(77,58,165),
+	};
+};
+
+
+int main()
+{
+	Image img1;
+	img1.getImageInfo();
+	
+	return 0;
+}

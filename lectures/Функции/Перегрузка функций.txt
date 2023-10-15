@@ -1,0 +1,26 @@
+#include <iostream>
+using namespace std;
+
+int Sum(int a, int b, int c)
+{
+	return a + b + c;
+}
+
+ int Sum(int a, int b)
+{
+	return a + b;
+}
+
+ double Sum(double a, double b)
+ {
+	 return a + b;
+ }
+
+ void main()
+ {
+	 cout << Sum(5, 6) << endl;
+
+	 cout << Sum(4.13, 5.56) << endl;
+
+	 cout << Sum(3, 4, 5) << endl;
+ }

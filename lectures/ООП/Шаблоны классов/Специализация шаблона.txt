@@ -1,0 +1,37 @@
+#include "stdafx.h"
+
+using namespace std;
+
+//специализация шаблонов класса
+
+template <typename T>
+class Printer
+{
+public:
+	void Print(T value)
+	{
+		cout << value << endl;
+	}
+};
+
+template<>
+class Printer<string>
+{
+public:
+	void Print(string value)
+	{
+		cout << "Строка: " << value << endl;
+	}
+};
+
+int main()
+{
+	setlocale(LC_ALL, "ru");
+	//специализация под класс string
+	Printer<string> p1;
+	p1.Print("Привет мир!");
+	//базовый шаблон класса
+	Printer<bool> p2;
+	p2.Print(true);
+	return 0;
+}

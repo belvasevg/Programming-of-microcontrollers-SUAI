@@ -1,0 +1,110 @@
+#include <iostream>
+using namespace std;
+
+
+
+void main()
+{
+	setlocale(LC_ALL, "ru");
+	int a = 5;
+
+	int* pa = &a; //указатель
+
+	int &aRef = a; //ссылка
+
+}
+
+_____________________________________
+
+#include <iostream>
+using namespace std;
+
+
+
+void main()
+{
+	setlocale(LC_ALL, "ru");
+	int a = 5;
+
+	int* pa = &a; //указатель
+
+	int &aRef = a; //ссылка
+
+	cout << "Указатель: " << pa << endl;
+
+	cout << "Ссылка: " << aRef << endl;
+
+	cout << "Переменная a: " << a << endl;
+
+	pa++;
+
+	cout << "Указатель изменённый: " << pa << endl;
+
+	aRef++;
+
+	cout << "Ссылка изменённая: " << aRef << endl;
+
+	cout << "Переменная a изменённая: " << a << endl;
+}
+
+_________________________________________
+
+#include <iostream>
+using namespace std;
+
+
+
+void main()
+{
+	setlocale(LC_ALL, "ru");
+	int a = 5;
+
+	int *pa = &a; //указатель
+
+	int &aRef = a; //ссылка
+
+	int* ppa = &aRef;
+
+	cout << "a\t" << a << endl;
+
+	cout << "&aRef\t" << aRef << endl;
+
+	cout << "ppa\t" << ppa << endl;
+
+	cout << "*ppa\t" << *ppa << endl;
+}
+
+__________________________________________
+
+#include <iostream>
+using namespace std;
+
+void main()
+{
+	setlocale(LC_ALL, "ru");
+	int a = 5;
+
+	int *pa = &a; //указатель
+
+	int &aRef = a; //ссылка
+
+	int* ppa = &aRef;
+
+	cout << "a\t" << a << endl;
+
+	cout << "&aRef\t" << aRef << endl;
+
+	cout << "ppa\t" << ppa << endl;
+
+	cout << "*ppa\t" << *ppa << endl;
+
+	*ppa = 77;
+
+	cout << "a\t" << a << endl;
+
+	cout << "&aRef\t" << aRef << endl;
+
+	cout << "ppa\t" << ppa << endl;
+
+	cout << "*ppa\t" << *ppa << endl;
+}

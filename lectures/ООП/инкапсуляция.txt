@@ -1,0 +1,37 @@
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+class CoffeeGrinder
+{
+private:
+	bool CheckVoltage()
+	{
+		return true;
+	}
+
+public:
+	void Start()
+	{
+		//bool VoltageValue = CheckVoltage();
+		//if (VoltageValue)
+		if (CheckVoltage())
+		{
+			cout << "Ебашу зерно в кофейную пыль" << endl;
+		}
+		else
+		{
+			cout << "Меня ебашит током. Проверь, или я заебашу тебя" << endl;
+		}
+	}
+};
+
+int main()
+{
+	setlocale(LC_ALL, "ru");
+	CoffeeGrinder machine1;
+	machine1.Start();
+
+	return 0;
+}

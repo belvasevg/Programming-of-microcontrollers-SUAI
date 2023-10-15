@@ -1,0 +1,6 @@
+							Исходный модификатор доступа
+				piblic		|		private		|		protected
+________________________________________________|_______________________________|_________________________________
+public-насследование	|	public		|		private		|		protected
+private-наследование	|	private		|		private		|		private
+protected-наследование	|	protected	|		private		|		protected

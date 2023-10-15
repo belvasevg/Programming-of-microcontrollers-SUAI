@@ -1,0 +1,52 @@
+#include <iostream>
+#include <string>
+#include <ctime>
+
+using namespace std;
+
+// двумерный динамический массив
+// для матрицы на большом экране надо сделать 214 колонок
+
+void main()
+{
+	setlocale(LC_ALL, "ru");
+	srand(time(nullptr));
+	
+	int row, col;
+	cout << "Enter value of row: ";
+	cin >> row;
+	cout << "Enter value of column: ";
+	cin >> col;
+
+	int** arr = new int* [row];
+
+	for (int i = 0; i < row; i++)
+	{
+		arr[i] = new int[col];
+	}
+
+	for (int i = 0; i < row; i++)
+	{
+		for (int j = 0; j < col; j++)
+		{
+			arr[i][j] = rand() % 10;
+		}
+	}
+
+	for (int i = 0; i < row; i++)
+	{
+		for (int j = 0; j < col; j++)
+		{
+			cout << arr[i][j] << " ";
+		}
+		cout << endl;
+		cout << endl;
+	}
+
+	for (int i = 0; i < row; i++)
+	{
+		delete[] arr[i];
+	}
+
+	delete[] arr;
+}

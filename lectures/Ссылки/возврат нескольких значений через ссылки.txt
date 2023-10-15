@@ -1,0 +1,28 @@
+#include <iostream>
+#include <ctime>
+
+using namespace std;
+
+void foo(int &a, int &b,int &c)
+{
+	srand(time(NULL));
+
+	a = 11;
+	b = 3;
+	c = b * b * a - rand() % 100;
+}
+
+void main()
+{
+	int a = 0, b = 1, c = 2;
+
+	cout << "a = " << a << endl;
+	cout << "b = " << b << endl;
+	cout << "c = " << c << endl;
+
+	foo(a, b, c);
+
+	cout << "a = " << a << endl;
+	cout << "b = " << b << endl;
+	cout << "c = " << c << endl;
+}

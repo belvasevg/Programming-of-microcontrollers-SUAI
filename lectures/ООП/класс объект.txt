@@ -1,0 +1,48 @@
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+class Human
+{
+public:
+	int age = 18;
+	string name = "Adam";
+	double weight = 80;
+};
+
+class Point
+{
+public:
+
+	double x;
+	double y;
+	double z;
+};
+
+int main()
+{
+	Human human1;
+
+	human1.age = 28;
+	human1.name = "Vasiliy";
+	human1.weight = 103;
+
+	cout << human1.age << endl;
+	cout << human1.name << endl;
+	cout << human1.weight<< endl;
+
+	Human human2;
+
+	cout << human2.age << endl;
+	cout << human2.name << endl;
+	cout << human2.weight << endl;
+
+	Point p1;
+	p1.x = 10;
+	p1.y = -10;
+	p1.z = 10;
+	
+
+	return 0;
+}

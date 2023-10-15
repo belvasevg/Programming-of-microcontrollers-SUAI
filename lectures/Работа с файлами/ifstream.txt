@@ -1,0 +1,26 @@
+string path_to_file;
+//можно передать название с директорией d:\MyWork\MyWorks\IT_Projects\Pets_Cplus\work_with_files\myFile.txt
+//можно передать только название файла с указанием расширения MyFile.txt
+cout << "Введите название создаваемого файла: ";
+cin >> path_to_file;
+cout << endl;
+//ifstream fin;
+//fin.open(path_to_file);
+//if (!fin.is_open())
+//{
+//	cout << "Error with openning file" << endl;
+//}
+//else
+//{
+//	cout << "File is open!" << endl;
+//	string str;
+//	//char ch;
+//	while (!fin.eof())
+//	{
+//		//cout << ch;
+//		//fin >> str;
+//		getline(fin,str);
+//		cout << str << endl;
+//	}
+//}
+//fin.close();

@@ -1,0 +1,66 @@
+ОБЪЕКТ
+
+class Point
+{
+public:
+	Point()
+	{
+		x = y = z = 0;
+	}
+	Point(int x, int y, int z)
+	{
+		this->x = x;
+		this->y = y;
+		this->z = z;
+	}
+
+	void print()
+	{
+		cout << "x = " << x << "\ny = " << y << "\nz = " << z << endl;
+	}
+
+	int x;
+	int y;
+	int z;
+};
+
+INT MAIN
+
+string path_to_file;
+//можно передать название с директорией d:\MyWork\MyWorks\IT_Projects\Pets_Cplus\work_with_files\myFile.txt
+//можно передать только название файла с указанием расширения MyFile.txt
+cout << "Введите название создаваемого файла: ";
+cin >> path_to_file;
+cout << endl;
+//запись объекта
+/*Point point(12, 25, 31);
+point.print();
+ofstream fout;
+fout.open(path_to_file, ofstream::app);
+if (!fout.is_open())
+{
+cout << "Error reading file" << endl;
+}
+else
+{
+cout << "File is open!" << endl;
+fout.write((char*)&point,sizeof(Point));
+}
+fout.close();*/
+//чтение объекта
+/*ifstream fin;
+fin.open(path_to_file, ofstream::app);
+if (!fin.is_open())
+{
+cout << "Error reading file" << endl;
+}
+else
+{
+cout << "File is open!" << endl;
+Point point;
+while (fin.read((char*)&point, sizeof(Point)))
+{
+point.print();
+}
+}
+fin.close();*/

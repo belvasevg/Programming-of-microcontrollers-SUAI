@@ -1,0 +1,27 @@
+#include <iostream>
+using namespace std;
+
+void main()
+{
+	const char* str = "hello!";
+
+	cout << str << endl;
+}
+
+_______________________________________
+
+#include <iostream>
+using namespace std;
+
+void main()
+{
+	const char* strArray[] = {"Belay", "Vasiliy", "Evgenievich"};
+
+	for (int i = 0; i < 3; i++)
+	{
+		cout << strArray[i] << endl;
+	}
+}
+
+_______________________________________
+

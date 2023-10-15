@@ -1,0 +1,28 @@
+#include <iostream>
+#include <string>
+#include <ctime>
+
+using namespace std;
+
+class TestClass
+{
+public:
+	int& operator [](int index) // перегрузка оператора индексирования
+	{
+		return arr[index];
+	}
+
+private:
+	int arr[5]{ 5,14,32,56,69};
+};
+
+int main()
+{
+	setlocale(LC_ALL, "ru");
+	
+	TestClass a;
+	for (int i = 0; i < 5; i++)
+		cout << a[i] << endl;
+
+	return 0;
+}

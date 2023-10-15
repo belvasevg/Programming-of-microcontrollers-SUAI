@@ -1,0 +1,24 @@
+#include <iostream>
+using namespace std;
+
+void main()
+{
+	setlocale(LC_ALL, "Rus");
+	int count = 0;
+	do
+	{
+		if (count <= 5000)
+		{
+			if (count % 2 == 0)
+				cout << "Чётная итерация = " << count << endl;
+			else if (count % 2 != 0)
+				cout << "Нечётная итерация = " << count << endl;
+		}
+		else if (count > 5000)
+		{
+			cout << "Итерация превысила значение 5000 и равна " << count << endl;
+			break;
+		}
+		count++;
+	} while (true);
+}

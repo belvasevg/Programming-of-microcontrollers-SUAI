@@ -1,0 +1,16 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+//терминирующий ноль '\0'
+
+void main()
+{
+	setlocale(LC_ALL, "ru");
+	//char str[] = "Vasiliy";
+	//char str[255] = "Vasiliy";
+	//char str[] = { 'V','a','s','i','l','i','y'}; // выведет лишние сивловы
+	char str[] = {'V','a','s','i','l','i','y','\0'};
+	cout << str << endl;
+	cout << "Длина строки = " << strlen(str) << endl; //длина строки
+}

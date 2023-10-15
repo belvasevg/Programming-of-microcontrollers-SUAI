@@ -1,0 +1,115 @@
+#include <iostream>
+#include <string>
+#include <ctime>
+
+using namespace std;
+class Point
+{
+private:
+	double x;
+	double y;
+	double z;
+
+public:
+
+	Point()
+	{
+		x = 0;
+		y = 0;
+		z = 0;
+	}
+
+	Point(double valueX, double valueY, double valueZ) // конструктор класса
+	{
+		x = valueX;
+		y = valueY;
+		z = valueZ;
+	}
+
+	bool operator == (const Point &other)
+	{
+		return this->x == other.x && this->y == other.y && this->z == other.z;
+	}
+
+	bool operator != (const Point& other)
+	{
+		return !(this->x == other.x && this->y == other.y && this->z == other.z);
+	}
+
+	Point operator +(const Point &other)
+	{
+		Point temp;
+		temp.x = this->x + other.x;
+		temp.y = this->y + other.y;
+		temp.z = this->z + other.z;
+		return temp;
+	}
+
+	double GetX()
+	{
+		return x;
+	}
+
+	void SetX(double valueX)
+	{
+		x = valueX;
+	}
+
+	double GetY()
+	{
+		return y;
+	}
+
+	void SetY(double valueY)
+	{
+		y = valueY;
+	}
+
+	double GetZ()
+	{
+		return z;
+	}
+
+	void SetZ(double valueZ)
+	{
+		z = valueZ;
+	}
+
+	void Print()
+	{
+		cout << "X = " << x << "\tY = " << y << "\tZ = " << z << endl;
+	}
+
+	~Point() 
+	{
+		cout << "Вызвался деструктор " << this << endl;
+	}
+
+};
+
+
+int main()
+{
+	setlocale(LC_ALL, "ru");
+	Point a(5, 1, 10);
+	Point b(-7, 10, 6);
+	/*point c(5, 1, 10);
+
+	bool result1 = a == b;
+	bool result2 = a == c;
+
+	bool result11 = a != b;
+	bool result22 = a != c;
+
+
+	cout << result1 << endl;
+	cout << result2 << endl;
+
+	cout << result11 << endl;
+	cout << result22 << endl;*/
+
+	Point c = a + b;
+	c.Print();
+
+	return 0;
+}
